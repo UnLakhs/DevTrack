@@ -62,7 +62,6 @@ Developers often juggle multiple projects and ideas, leading to scattered notes,
 * Node.js
 * Express
 * MongoDB
-* Mongoose
 
 ---
 
@@ -87,48 +86,6 @@ DevTrack/
 
 ---
 
-## ⚙️ Getting Started
-
-### 1. Clone the repository
-
-```
-git clone <your-repo-url>
-cd DevTrack
-```
-
----
-
-### 2. Setup backend
-
-```
-cd server
-npm install
-```
-
-Create a `.env` file:
-
-```
-MONGO_URI=your_mongodb_connection_string
-PORT=8080
-```
-
-Run the server:
-
-```
-npm run dev
-```
-
----
-
-### 3. Setup frontend
-
-```
-cd client
-npm install
-npm run dev
-```
-
----
 
 ## 🔄 Development Workflow
 
