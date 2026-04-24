@@ -5,13 +5,39 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    try {
+      const response = await fetch("http://localhost:8080/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      });
 
-    console.log({
-      email,
-      password,
-    });
+      
+      console.log({
+        email,
+        password,
+      });
+      
+      const data = await response.json();
+      console.log("Response from server:", data);
+
+      if (!response.ok) {
+        console.error("Error logging in user:", data.message);
+        return;
+      }
+
+      console.log("User logged in successfully:", data);
+    } catch (error) {
+      console.error("Error logging in user:", error);
+    }
   };
 
   return (
@@ -66,7 +92,10 @@ export default function LoginPage() {
 
         <p className="mt-6 text-center text-sm text-zinc-400">
           Don&apos;t have an account?{" "}
-          <Link to="/register" className="font-medium text-white hover:underline">
+          <Link
+            to="/register"
+            className="font-medium text-white hover:underline"
+          >
             Create one
           </Link>
         </p>

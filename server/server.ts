@@ -5,6 +5,7 @@ import express, { Request, Response } from "express";
 import cors from "cors";
 import { connectDB } from "./db/connection";
 import authRoutes from "./routes/auth.routes";
+import cookieParser from "cookie-parser";
 
 const PORT = 8080;
 
@@ -16,7 +17,8 @@ const app = express();
 
 app.use(cors(corsOptions));
 app.use(express.json());
-
+app.use(cookieParser());
+  
 async function startServer() {
   try {
     const client = await connectDB();
