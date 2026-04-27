@@ -35,7 +35,7 @@ export default function Logo() {
         />
       </svg>
 
-      <span className="font-mono text-lg font-semibold tracking-tight">
+      <span className="font-mono text-3xl font-semibold tracking-tight">
         DevTrack
       </span>
     </div>
