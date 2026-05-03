@@ -1,38 +1,37 @@
 import { Link } from "react-router-dom";
-import Logo from "../components/Logo";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-background text-foreground flex  px-6">
+      <div className="w-full max-w-5xl">
+        {/* HERO */}
+        <div className="max-w-2xl">
+          <h1 className="text-4xl md:text-5xl font-semibold tracking-tight mb-6 leading-tight">
+            Project tracking, built for the way developers actually work.
+          </h1>
 
-      {/* CONTENT AREA */}
-      <div className="mx-auto max-w-6xl px-6 py-10">
-        <div className="mb-8">
-          <Logo />
-        </div>
+          <p className="text-lg text-muted-foreground mb-8">
+            DevTrack is a small, focused workspace for your side projects. Track
+            features and bugs, keep implementation notes next to the code they
+            describe, and watch progress without the ceremony of an enterprise
+            tool.
+          </p>
 
-        <h1 className="text-3xl font-semibold mb-4">
-          Welcome to DevTrack
-        </h1>
+          <div className="flex gap-4">
+            <Link
+              to="/register"
+              className="rounded-md bg-sidebar-primary px-5 py-2.5 text-sm font-medium text-sidebar-primary-foreground hover:opacity-90 transition"
+            >
+              Start your workspace
+            </Link>
 
-        <p className="text-zinc-400 mb-8 max-w-lg">
-          Start building your developer workspace.
-        </p>
-
-        <div className="flex gap-4">
-          <Link
-            to="/register"
-            className="rounded-md bg-emerald-500 px-4 py-2 text-sm font-medium text-black hover:bg-emerald-400"
-          >
-            Get Started
-          </Link>
-
-          <Link
-            to="/login"
-            className="rounded-md border border-zinc-700 px-4 py-2 text-sm hover:border-zinc-500"
-          >
-            Sign In
-          </Link>
+            <Link
+              to="/login"
+              className="rounded-md border border-sidebar-border px-5 py-2.5 text-sm hover:bg-sidebar-accent transition"
+            >
+              Sign In
+            </Link>
+          </div>
         </div>
       </div>
     </main>
