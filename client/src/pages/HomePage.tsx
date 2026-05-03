@@ -1,12 +1,9 @@
 import { Link } from "react-router-dom";
 import Logo from "../components/Logo";
-import { Navbar } from "../components/Navbar";
 
 export default function HomePage() {
   return (
     <main className="min-h-screen">
-      {/* TOP NAVBAR */}
-      <Navbar />
 
       {/* CONTENT AREA */}
       <div className="mx-auto max-w-6xl px-6 py-10">
